@@ -20,6 +20,9 @@ const characterdatabase = require('./clientcommands/characterdatabase.js')
 
 client.once("ready", ()=>{
     console.log("Ready!")
+    client.user.setActivity("for commands", {
+        type: "WATCHING"
+     });
 })
 
 //basic commands with files
