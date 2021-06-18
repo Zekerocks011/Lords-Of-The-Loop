@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'reactionroles',
 	description: 'Resets the reactionroles',
+	aliases: ['rr'],
 	execute(message, args, Discord) {
         message.channel.bulkDelete(3)
 
