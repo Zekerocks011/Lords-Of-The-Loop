@@ -27,8 +27,11 @@ client.once("ready", ()=>{
 
 //basic commands with files
 client.on('message', (message) =>{
-	const args = message.content.slice(prefix.length).trim().split(/ +/)
-	const command = args.shift().toLowerCase()
+    const args = message.content.slice(prefix.length).trim().split(/ +/)
+    const commandName = args.shift().toLowerCase()
+    const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+    if (!command) return;
 
     if (!client.commands.has(command)) return
 
